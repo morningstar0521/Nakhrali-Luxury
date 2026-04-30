@@ -11,8 +11,7 @@
 [![Stack](https://img.shields.io/badge/Stack-React_19_·_Express_5_·_PostgreSQL-3b82f6?style=for-the-badge&labelColor=1a1a1a)]()
 [![Solo](https://img.shields.io/badge/Team-Solo_Engineer-a855f7?style=for-the-badge&labelColor=1a1a1a)]()
 
-### **[👉 Visit the live site](https://nakhraliluxury.com)** &nbsp;·&nbsp; **[📩 Hire me](mailto:23f2002762@ds.study.iitm.ac.in)**
-
+### **[👉 Visit the live site](https://nakhraliluxury.com)** &nbsp;·&nbsp;
 </div>
 
 ---
@@ -50,6 +49,7 @@ Highlights that make it stand out:
 - 🎁 **Custom hamper builder** — interactive gift-box configurator with live pricing and stock validation. *Not a feature you see in starter projects.*
 - 🤖 **One-click product import scraper** — admin pastes an Amazon or Flipkart URL → backend uses `axios` + `cheerio` to extract title, description, price, and all images automatically. **Cuts product onboarding from 10 minutes per SKU to 10 seconds.**
 - 🛠️ **Self-serve admin dashboard** — non-technical client manages 100% of merchandising (products, banners, hampers, occasions, orders) without ever touching code.
+- 💳 **Razorpay live payments** — UPI, cards, netbanking, and wallets, with **server-side HMAC-SHA256 signature verification** so the frontend can never lie about payment success.
 - 🔐 **Production-grade security** — Helmet, rate limiting, XSS sanitization, parameterized queries, bcrypt 12-rounds, OWASP Top 10 hardened.
 - 🚀 **Sub-second LCP** on mobile via Cloudflare edge cache, image polish, code-splitting, and preconnect hints.
 
@@ -135,6 +135,7 @@ Highlights that make it stand out:
 - Multi-image product detail with zoom
 - Persistent cart and wishlist
 - **Multi-address book** with default address
+- **Razorpay checkout** — UPI, cards, netbanking, wallets, plus COD
 - Order history and order tracking
 - Email/password + Google OAuth login
 - "Remember me" with smart `localStorage` ↔ `sessionStorage` switching
@@ -234,17 +235,19 @@ The database stores customer addresses, order history, and PII. Direct internet 
 </details>
 
 <details>
-<summary><b>💳 Payment trust — server-side signature verification (when integrated)</b></summary>
+<summary><b>💳 Payment trust — Razorpay with server-side signature verification</b></summary>
 <br>
 
-E-commerce frontends can lie about payment success. Naive integrations confirm orders client-side and lose money to tampering.
+E-commerce frontends can lie about payment success. Naive integrations confirm orders client-side and lose money to tampering. The Razorpay integration here is structured to make that impossible:
 
-The Razorpay flow is structured so:
-1. Order is created **server-side** with the keyed secret
-2. After Razorpay returns, the payment signature is verified **server-side using HMAC-SHA256** against the keyed secret
-3. **Only then** is the order status flipped to `paid` in the DB
+1. Order is created **server-side** by hitting `api.razorpay.com/orders` with the keyed secret — frontend never sees the secret
+2. Razorpay Checkout opens on the client; on success, the SDK returns `razorpay_order_id`, `razorpay_payment_id`, `razorpay_signature`
+3. Backend recomputes `HMAC-SHA256(order_id + "|" + payment_id, KEY_SECRET)` and **constant-time compares** it to the signature
+4. **Only on signature match** is the order status flipped to `paid` in the DB and the cart cleared
 
-The client UI never has the authority to confirm a payment.
+Supported methods on live: **UPI · Cards · Netbanking · Wallets · COD** (COD is handled separately, no payment gateway round-trip).
+
+The client UI never has authority to confirm a payment.
 
 </details>
 
@@ -292,23 +295,9 @@ The client UI never has the authority to confirm a payment.
 
 ---
 
-## 🗺️ What's next (roadmap)
-
-Honest about what's coming — actively shipping these:
-
-- [ ] Full **Razorpay live key** integration with webhook-driven order finalization
-- [ ] **httpOnly cookie auth** instead of localStorage JWT — better default for production
-- [ ] **TypeScript migration** for the frontend — refactor cost is growing with surface area
-- [ ] **PgBouncer** for Postgres connection pooling before next traffic spike
-- [ ] **Postgres `tsvector` + GIN index** to upgrade from `LIKE` to full-text search if catalog grows past ~1,000 SKUs
-- [ ] **Order webhooks** for shipping partner integration (Shiprocket / Delhivery)
-- [ ] **Email transactional flow** — order confirmation, shipping updates (Resend / Postmark)
-
----
-
 ## 🧑‍💻 About me
 
-Hi, I'm **Shubh** — a full-stack engineer pursuing my **BS in Data Science at IIT Madras**.
+Hi, I'm **Shubh Ghiya** — a full-stack engineer pursuing my **BS in Data Science at IIT Madras**.
 
 I built Nakhrali end-to-end as a paid client engagement: requirements, architecture, frontend, backend, database design, deployment, security, monitoring, and ongoing maintenance. The brand is live, the client runs the store independently, and I'm still on retainer for new features.
 
@@ -319,11 +308,14 @@ I built Nakhrali end-to-end as a paid client engagement: requirements, architect
 [![Email](https://img.shields.io/badge/Email-ghiyashubh23@gmail.com-d44638?style=for-the-badge&logo=gmail&logoColor=fff)](mailto:ghiyashubh23@gmail.com)
 [![Live Site](https://img.shields.io/badge/See_it_live-nakhraliluxury.com-c9a961?style=for-the-badge)](https://nakhraliluxury.com)
 
+
 > 🔑 **Hiring teams:** request **read access to the private source repo** by email — happy to do a code walkthrough on a call.
 
 ---
 
 <div align="center">
 <sub>© Nakhrali. Code proprietary. This README is a public case study published with permission of the brand.</sub>
+</div>
+
 </div>
 
