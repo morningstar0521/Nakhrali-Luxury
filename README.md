@@ -39,6 +39,16 @@
 
 ---
 
+<div align="center">
+
+### The client manages products, banners, hampers, and orders independently — without developer involvement.
+
+<sub>Built so a non-technical operator runs the business day-to-day. The engineer is not in the loop for merchandising.</sub>
+
+</div>
+
+---
+
 ## At a glance
 
 <table align="center">
@@ -368,9 +378,9 @@ Live payment methods: UPI, cards, netbanking, wallets, and COD (handled separate
 
 ## About me
 
-I'm **Shubh Ghiya**, a full-stack engineer pursuing a BS in Data Science at IIT Madras. I built Nakhrali end-to-end as a paid client engagement: requirements, architecture, frontend, backend, database design, deployment, security, monitoring, and ongoing maintenance. The brand is live, the client runs the store independently, and I'm still on retainer for new features.
+I'm **Shubh Ghiya**, a full-stack engineer pursuing a BS in Data Science at IIT Madras. I built Nakhrali end-to-end as a paid client engagement: requirements, architecture, frontend, backend, database design, deployment, security, monitoring, and ongoing maintenance. The brand is live, the client runs the store independently, and I'm on retainer for new features.
 
-I'm looking for full-stack or backend roles where I can ship production systems end-to-end. Startups especially welcome.
+Open to full-stack and backend roles building production systems end-to-end.
 
 <p>
   <a href="mailto:ghiyashubh23@gmail.com">
@@ -380,18 +390,16 @@ I'm looking for full-stack or backend roles where I can ship production systems 
   <a href="https://drive.google.com/file/d/1Mk4IvyDjdUaPmGgZ1ONd1-FvB7c8jkKy/view?usp=sharing">
     <img src="https://img.shields.io/badge/résumé-view%20on%20drive-4285f4?style=for-the-badge&logo=googledrive&logoColor=fff&labelColor=0a0a0a" alt="Résumé" />
   </a>
-  <!-- TODO: paste your LinkedIn URL into href and uncomment
   &nbsp;
-  <a href="LINKEDIN_URL_HERE">
+  <a href="https://www.linkedin.com/in/shubh-ghiya/">
     <img src="https://img.shields.io/badge/linkedin-connect-0a66c2?style=for-the-badge&logo=linkedin&logoColor=fff&labelColor=0a0a0a" alt="LinkedIn" />
   </a>
-  -->
-  <!-- TODO: paste your GitHub profile URL into href and uncomment
+
   &nbsp;
-  <a href="GITHUB_PROFILE_URL_HERE">
+  <a href="https://github.com/morningstar0521">
     <img src="https://img.shields.io/badge/github-%40handle-181717?style=for-the-badge&logo=github&logoColor=fff&labelColor=0a0a0a" alt="GitHub" />
   </a>
-  -->
+ 
 </p>
 
 <p>
