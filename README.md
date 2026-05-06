@@ -63,7 +63,7 @@ This repository is a **public case study, not the source code.** The application
 
 ## What it is
 
-A full-stack e-commerce platform — storefront, custom hamper builder, admin dashboard, payments, and analytics — built end-to-end for [Nakhrali](https://nakhraliluxury.com). Most e-commerce projects on GitHub are tutorials or starter kits. This one is processing real orders, taking real payments, and is operated day-to-day by a non-technical client.
+A full-stack e-commerce platform — storefront, custom hamper builder, admin dashboard, payments, and analytics — built end-to-end for [Nakhrali](https://nakhraliluxury.com). Unlike a demo storefront, this system supports real orders, payments, admin operations, and ongoing client use — operated day-to-day by a non-technical client.
 
 |  |  |
 | :--- | :--- |
@@ -377,8 +377,26 @@ I'm looking for full-stack or backend roles where I can ship production systems 
     <img src="https://img.shields.io/badge/email-ghiyashubh23%40gmail.com-d44638?style=for-the-badge&logo=gmail&logoColor=fff&labelColor=0a0a0a" alt="Email" />
   </a>
   &nbsp;
+  <a href="https://drive.google.com/file/d/1Mk4IvyDjdUaPmGgZ1ONd1-FvB7c8jkKy/view?usp=sharing">
+    <img src="https://img.shields.io/badge/résumé-view%20on%20drive-4285f4?style=for-the-badge&logo=googledrive&logoColor=fff&labelColor=0a0a0a" alt="Résumé" />
+  </a>
+  <!-- TODO: paste your LinkedIn URL into href and uncomment
+  &nbsp;
+  <a href="LINKEDIN_URL_HERE">
+    <img src="https://img.shields.io/badge/linkedin-connect-0a66c2?style=for-the-badge&logo=linkedin&logoColor=fff&labelColor=0a0a0a" alt="LinkedIn" />
+  </a>
+  -->
+  <!-- TODO: paste your GitHub profile URL into href and uncomment
+  &nbsp;
+  <a href="GITHUB_PROFILE_URL_HERE">
+    <img src="https://img.shields.io/badge/github-%40handle-181717?style=for-the-badge&logo=github&logoColor=fff&labelColor=0a0a0a" alt="GitHub" />
+  </a>
+  -->
+</p>
+
+<p>
   <a href="https://nakhraliluxury.com">
-    <img src="https://img.shields.io/badge/see%20it%20live-nakhraliluxury.com-c9a961?style=for-the-badge&labelColor=0a0a0a" alt="Live site" />
+    <img src="https://img.shields.io/badge/▶%20see%20it%20live-nakhraliluxury.com-c9a961?style=for-the-badge&labelColor=0a0a0a" alt="Live site" />
   </a>
 </p>
 
